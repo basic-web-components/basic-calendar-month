@@ -1,0 +1,118 @@
+<!--
+A month calendar with headings for month name, year, and days of week.
+-->
+
+<link rel="import" href="../basic-element/basic-element.html">
+<link rel="import" href="../basic-month-and-year/basic-month-and-year.html">
+<link rel="import" href="../basic-days-of-week/basic-days-of-week.html">
+<link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
+
+<polymer-element name="basic-calendar-month" extends="basic-element" attributes="culture date dayElementTag daysOfWeekFormat">
+
+<template>
+
+  <style>
+  :host {
+    display: inline-block;
+  }
+
+  #monthAndYear {
+    display: block;
+  }
+
+  #monthTable {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+  }
+
+  #daysOfWeek {
+    display: table-header-group;
+  }
+
+  /* Generic styling */
+  :host([generic]) #monthAndYear {
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+  }
+
+  :host([generic]) #daysOfWeek {
+    font-size: smaller;
+  }
+
+  :host([generic]) .dayOfWeek {
+    padding: 4px;
+  }
+  </style>
+
+  <basic-month-and-year id="monthAndYear"></basic-month-and-year>
+  <div id="monthTable">
+    <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
+    <basic-calendar-month-days id="calendar" dayElementTag="{{dayElementTag}}"></basic-calendar-month-days>
+  </div>
+
+</template>
+
+<script>
+Polymer( "basic-calendar-month", {
+
+  applyAuthorStyles: true,
+
+  cultureChanged: function() {
+    var culture = this.culture;
+    if ( culture ) {
+      this.$.monthAndYear.culture = culture;
+      this.$.daysOfWeek.culture = culture;
+      this.$.calendar.culture = culture;
+    }
+  },
+
+  dateChanged: function() {
+    var date = this.date;
+    this.$.monthAndYear.date = date;
+    this.$.calendar.date = date;
+  },
+
+  dayElementForDate: function( date ) {
+    return this.$.calendar.dayElementForDate( date );
+  },
+
+  get days() {
+    return this.$.calendar.days;
+  },
+
+  daysOfWeekFormat: "namesShort",
+
+  get firstDateOfMonth() {
+    return this.$.calendar.firstDateOfMonth;
+  },
+
+  isDateInMonth: function( date ) {
+    return this.$.calendar.isDateInMonth( date );
+  },
+
+  get lastDateOfMonth() {
+    return this.$.calendar.lastDateOfMonth;
+  },
+
+  ready: function() {
+    this.super();
+    if ( !this.date ) {
+      // By default, show the current month.
+      this.date = new Date();
+    }
+  },
+
+  weekElementForDate: function( date ) {
+    return this.$.calendar.weekElementForDate( date );
+  },
+
+  get weeks() {
+    return this.$.calendar.weeks;
+  }
+
+});
+</script>
+
+</polymer-element>
