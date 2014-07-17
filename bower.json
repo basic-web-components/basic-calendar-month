@@ -11,7 +11,8 @@
     "basic-month-and-year": "basic-web-components/basic-month-and-year#master"
   },
   "devDependencies": {
-    "basic-framed-content": "basic-web-components/basic-framed-content#master"
+    "basic-framed-content": "basic-web-components/basic-framed-content#master",
+    "basic-culture-selector": "basic-web-components/basic-culture-selector#master"
   },
   "keywords": [
     "basic-web-components",
