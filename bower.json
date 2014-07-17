@@ -10,7 +10,7 @@
     "basic-element": "basic-web-components/basic-element#master",
     "basic-month-and-year": "basic-web-components/basic-month-and-year#master"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "basic-framed-content": "basic-web-components/basic-framed-content#master"
   },
   "keywords": [
