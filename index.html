@@ -24,6 +24,11 @@ body {
 basic-framed-content {
   padding: 2em;
 }
+
+basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
+basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
+  color: gray;
+}
 </style>
 
 </head>
