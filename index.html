@@ -25,6 +25,11 @@ basic-framed-content {
   padding: 2em;
 }
 
+/* For polyfill */
+basic-calendar-month basic-days-of-week .dayOfWeek.weekend,
+basic-calendar-month basic-calendar-day.weekend.insideMonth {
+  color: gray;
+}
 basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
 basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
   color: gray;
