@@ -22,7 +22,7 @@ leaves alpha status.)
 <link rel="import" href="../basic-days-of-week/basic-days-of-week.html">
 <link rel="import" href="../basic-calendar-month-days/basic-calendar-month-days.html">
 
-<polymer-element name="basic-calendar-month" extends="basic-element" attributes="culture date dayTag daysOfWeekFormat">
+<polymer-element name="basic-calendar-month" extends="basic-element" attributes="culture date dayElement daysOfWeekFormat">
 
 <template>
 
@@ -64,7 +64,7 @@ leaves alpha status.)
   <basic-month-and-year id="monthAndYear"></basic-month-and-year>
   <div id="monthTable">
     <basic-days-of-week id="daysOfWeek" format="{{daysOfWeekFormat}}"></basic-days-of-week>
-    <basic-calendar-month-days id="calendar" dayTag="{{dayTag}}"></basic-calendar-month-days>
+    <basic-calendar-month-days id="calendar" dayElement="{{dayElement}}"></basic-calendar-month-days>
   </div>
 
 </template>
@@ -134,7 +134,7 @@ Polymer({
    * The name for the element type which should be used to render the individual
    * days in the week.
    *
-   * @attribute dayTag
+   * @attribute dayElement
    * @default "basic-calendar-day"
    */
 
