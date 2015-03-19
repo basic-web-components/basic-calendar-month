@@ -81,7 +81,7 @@ Polymer({
 
   cultureChanged: function() {
     var culture = this.culture;
-    if ( culture ) {
+    if (culture) {
       this.$.monthAndYear.culture = culture;
       this.$.daysOfWeek.culture = culture;
       this.$.calendar.culture = culture;
@@ -110,8 +110,8 @@ Polymer({
    * @method dayElementForDate
    * @param date
    */
-  dayElementForDate: function( date ) {
-    return this.$.calendar.dayElementForDate( date );
+  dayElementForDate: function(date) {
+    return this.$.calendar.dayElementForDate(date);
   },
 
   /**
@@ -128,7 +128,7 @@ Polymer({
    *
    * Valid values: "namesAbbr" (the default), "namesFull", "namesShort".
    */
-  daysOfWeekFormat: "namesAbbr",
+  daysOfWeekFormat: 'namesAbbr',
 
   /**
    * The name for the element type which should be used to render the individual
@@ -156,8 +156,8 @@ Polymer({
    * @method isDateInMonth
    * @param date
    */
-  isDateInMonth: function( date ) {
-    return this.$.calendar.isDateInMonth( date );
+  isDateInMonth: function(date) {
+    return this.$.calendar.isDateInMonth(date);
   },
 
   /**
@@ -174,7 +174,7 @@ Polymer({
 
   ready: function() {
     this.super();
-    if ( !this.date ) {
+    if (!this.date) {
       // By default, show the current month.
       this.date = new Date();
     }
@@ -186,8 +186,8 @@ Polymer({
    * @method weekElementForDate
    * @param date
    */
-  weekElementForDate: function( date ) {
-    return this.$.calendar.weekElementForDate( date );
+  weekElementForDate: function(date) {
+    return this.$.calendar.weekElementForDate(date);
   },
 
   /**
