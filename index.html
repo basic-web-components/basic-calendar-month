@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="../webcomponentsjs/webcomponents.js"></script>
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
 
 <link rel="import" href="../basic-framed-content/basic-framed-content.html">
 <link rel="import" href="../basic-culture-selector/basic-culture-selector.html">
@@ -30,17 +30,20 @@ basic-calendar-month basic-days-of-week .dayOfWeek.weekend,
 basic-calendar-month basic-calendar-day.weekend.insideMonth {
   color: gray;
 }
+
+/* TODO: Replace use of deprecated ::shadow and /deep/ */
 basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
 basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth {
   color: gray;
 }
+
 </style>
 
 </head>
 
 <body unresolved>
 <basic-framed-content>
-  <template is="auto-binding">
+  <template is="dom-bind">
     <p>
       Preferred language/culture: <basic-culture-selector culture="{{culture}}"></basic-culture-selector>
     </p>
